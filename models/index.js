@@ -1,8 +1,8 @@
 //Connect the db to MongoDBAtlas
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 const db = mongoose.connection;
 const dbUrl = process.env.DATABASE_URL;
-
+console.log("x")
 mongoose
 	.connect(dbUrl)
 	.then(() =>

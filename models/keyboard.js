@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const keyboardSchema = new mongoose.Schema(
     {
-    keyboard_name: {
+    name: {
         type: String,
         required: [true, "You must provide a name for your board"],
         },

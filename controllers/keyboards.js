@@ -5,7 +5,7 @@ const idx = (req, res) => {
 	db.Keyboards.find({}, function (err, allKeyboards) {
 		if (err) return res.send(err);
 		const context = { Keyboards: allKeyboards };
-		return res.render("Keyboards/index", context);
+		return res.render("keyboards/index", context);
 	});
 };
 
@@ -16,13 +16,13 @@ const show = (req, res) => {
 		if (err) return res.send(err);
 
 		const context = { Keyboards: foundKeyboards };
-		return res.render("Keyboards/show", context);
+		return res.render("keyboards/show", context);
 	});
 };
 
 // New
 const newKeyboards = (req, res) => {
-	res.render("Keyboards/new");
+	res.render("keyboards/new");
 };
 
 // Create
@@ -30,7 +30,7 @@ const create = (req, res) => {
 	db.Keyboards.create(req.body, function (err, createdKeyboards) {
 		if (err) return res.send(err);
 
-		return res.redirect("/Keyboards");
+		return res.redirect("/keyboards");
 	});
 };
 
@@ -40,7 +40,7 @@ const edit = (req, res) => {
 		if (err) return res.send(err);
 
 		const context = { Keyboards: foundKeyboards };
-		return res.render("Keyboards/edit", context);
+		return res.render("keyboards/edit", context);
 	});
 };
 
@@ -56,7 +56,7 @@ const update = (req, res) => {
 		{ new: true },
 		(err, updatedKeyboards) => {
 			if (err) return res.send(err);
-			return res.redirect(`/Keyboards/${updatedKeyboards._id}`);
+			return res.redirect(`/keyboards/${updatedKeyboards._id}`);
 		}
 	);
 };
@@ -66,7 +66,7 @@ const destroy = (req, res) => {
 	db.Keyboards.findByIdAndDelete(req.params.id, (err, deletedKeyboards) => {
 		if (err) return res.send(err);
 
-		return res.redirect("/Keyboards");
+		return res.redirect("/keyboards");
 	});
 };
 

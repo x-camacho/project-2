@@ -1,3 +1,3 @@
 module.exports = {
-	Keyboards: require("./keyboards"),
+	keyboards: require("./keyboards"),
 };

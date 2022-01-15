@@ -14,17 +14,12 @@
 
     <main>
       <div>
-        <% articles.forEach(article=> { %>
+        <% keyboards.forEach(keyboards=> { %>
 			<div>
 			  <article>
 				<div>
 				  <div>
-					<strong><%= article.title%></strong>
-					<small>
-					  <%= new Date(article.createdAt).toLocaleString() %>
-					</small>
-										  <p>By: Author Person</p>
-					<%= article.body%>
+					<strong><%= keyboards.name%></strong>
 				  </div>
 				</div>
 				<div>
@@ -39,7 +34,7 @@
 			</div>
   <% }) %>
       </div>
-	  <form action="/articles" method="POST">
+	  <form action="/keyboards" method="POST">
 		<div>
 		  <label >Title</label>
 		  <div">

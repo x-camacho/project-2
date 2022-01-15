@@ -3,6 +3,8 @@ require("dotenv").config();
 // External Modules //
 const express = require('express');
 
+const models = require("./models");
+
 // Instanced Module //
 const app = express();
 

@@ -1,24 +1,19 @@
 require("dotenv").config();
-/* ==== External Modules ==== */
-const express = require("express");
 
-/* ==== Internal Modules ==== */
+// External Modules //
+const express = require('express');
 
+// Instanced Module //
+const app = express();
 
-/* ==== Instanced Modules  ==== */
-
-
-/* ====  Configuration  ==== */
-const PORT = 4000;
+// Configuration //
+const PORT = process.env.PORT || 4000; //for deployment in heroku
 app.set("view engine", "ejs");
 
-/* ====  Middleware  ==== */
-
-
-/* ====  Routes & Controllers  ==== */
-
-
-/* ====  Server Listener  ==== */
-app.listen(PORT, () => {
-    console.log(`App is live at http://localhost:${PORT}`);
+// Internal Routes //
+app.get('/', (req, res) => { //Renders Landing Page
+    res.render("index");
 });
+
+// Server Listener //
+app.listen(PORT, () => console.log(`YO! Server is connected at ${PORT}`))

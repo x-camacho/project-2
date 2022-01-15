@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+ <!-- Head partial if you want to use partials, otherwise type it out --> 
+  
+  <body>
+    
+    <!-- Navbar Partial if you want to use partials,  otherwise type it out -->
+
+    <section>
+      <div>
+        <p class="title">All Articles</p>
+      </div>
+    </section>
+
+    <main>
+      <div>
+        <% keyboards.forEach(keyboards=> { %>
+			<div>
+			  <article>
+				<div>
+				  <div>
+					<strong><%= keyboards.name%></strong>
+				  </div>
+				</div>
+				<div>
+				  <section>
+					<div>
+					  <a>Edit</a>
+					  <a>Remove</a>
+					</div>
+				  </section>
+				</div>
+			  </article>
+			</div>
+  <% }) %>
+      </div>
+	  <form action="/keyboards" method="POST">
+		<div>
+		  <label >Title</label>
+		  <div">
+			<input
+			  type="string"
+			  name="title"
+			  placeholder="Article Title"
+			/>
+		  </div>
+		</div>
+		<div>
+		  <label">Body</label>
+		  <div>
+			<textarea
+			  name="body"
+			  placeholder="Tell us about it!"
+			></textarea>
+		  </div>
+		</div>
+		<div>
+		  <button type="submit">Submit</button>
+		</div>
+	  </form>
+    </main>
+  </body>
+</html>

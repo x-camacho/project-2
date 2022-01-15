@@ -4,6 +4,8 @@ require("./models");
 const express = require('express');
 const methodOverride = require('method-override');
 
+const keyboardsRouter = require('./routes/keyboards')
+
 // Internal Modules //
 const routes = require('./routes')
 
@@ -24,7 +26,7 @@ app.get((req, res) => {
 	res.send("404! Error! Page not found :(");
 });
 //Internal Routes
-app.use("/keyboards", routes.keyboards);
+app.use("/keyboards", keyboardsRouter);
 
 // Server Listener //
 app.listen(PORT, () => console.log(`YO! Server is connected at ${PORT}`))

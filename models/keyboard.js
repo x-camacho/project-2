@@ -4,32 +4,31 @@ const keyboardSchema = new mongoose.Schema(
     {
     name: {
         type: String,
-        required: [true, "You must provide a name for your board"],
         },
     size: {
         type: String,
-        required: [true, "You must provide a size type for your board"],
+        required: [false, "You must provide a size type for your board"],
         },
-    plate_material: {
+    plateMaterial: {
         type: String,
-        required: [true, "You must provide a material type for your board"],
+        required: [false, "You must provide a material type for your board"],
     },
-    switch_type: {
+    switchType: {
         type: String,
-        required: [true, "You must provide a switch type for your board"],
+        required: [false, "You must provide a switch type for your board"],
     },
-    PCB_type: {
+    pcbType: {
         type: String,
-        required: [true, "You must provide a type of circuit for your board"],
+        required: [false, "You must provide a type of circuit for your board"],
     },
-    oil_type: {
+    oilType: {
         type: String, 
-        required: [true, "You must provide a type of oil for the board"],
+        required: [false, "You must provide a type of oil for the board"],
     },
     },
     {
         timestamps: true,
-    }
+    },
 );
 
-module.exports = mongoose.model("Keyboards", keyboardSchema);
+module.exports = mongoose.model("keyboards", keyboardSchema);

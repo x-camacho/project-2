@@ -1,63 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
- <!-- Head partial if you want to use partials, otherwise type it out --> 
+<%- include('../partials/header') %>
+<table id="list">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Size</th>
+      <th>Plate Material</th>
+      <th>Switch Type</th>
+      <th>PCB Type</th>
+      <th>Oil Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% keyboards.forEach( k => { %>
+        <tr>
+          <td><%= k.name %></td>
+          <td><%= k.size %></td>
+          <td><%= k.plateMaterial %></td>
+          <td><%= k.switchType %></td>
+          <td><%= k.pcbType %></td>
+          <td><%= k.oilType %></td>
+          <td><a href="/keyboards/<%= k._id %>">Keyboard Details</a></td>
+        </tr>
+        <% }); %>
+    </tbody>
+  </table>
   
-  <body>
-    
-    <!-- Navbar Partial if you want to use partials,  otherwise type it out -->
-
-    <section>
-      <div>
-        <p class="title">All Articles</p>
-      </div>
-    </section>
-
-    <main>
-      <div>
-        <% keyboards.forEach(keyboards=> { %>
-			<div>
-			  <article>
-				<div>
-				  <div>
-					<strong><%= keyboards.name%></strong>
-				  </div>
-				</div>
-				<div>
-				  <section>
-					<div>
-					  <a>Edit</a>
-					  <a>Remove</a>
-					</div>
-				  </section>
-				</div>
-			  </article>
-			</div>
-  <% }) %>
-      </div>
-	  <form action="/keyboards" method="POST">
-		<div>
-		  <label >Title</label>
-		  <div">
-			<input
-			  type="string"
-			  name="title"
-			  placeholder="Article Title"
-			/>
-		  </div>
-		</div>
-		<div>
-		  <label">Body</label>
-		  <div>
-			<textarea
-			  name="body"
-			  placeholder="Tell us about it!"
-			></textarea>
-		  </div>
-		</div>
-		<div>
-		  <button type="submit">Submit</button>
-		</div>
-	  </form>
-    </main>
-  </body>
-</html>
+<%- include('../partials/footer') %>

@@ -16,6 +16,12 @@ const app = express();
 const PORT = process.env.PORT || 4000; //for deployment in heroku
 app.set("view engine", "ejs");
 
+// Middleware //
+app.use((req, res, next) => {
+    console.log(req.url, req.method);
+    next();
+});
+
 //*=== Routes & Controllers =====*//
 // Home Route
 app.get('/', (req, res) => { //Renders Landing Page

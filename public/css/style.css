@@ -128,3 +128,27 @@
       grid-column: 2 / 3;
       margin-bottom: 2rem;
   }
+
+/* Partials nav bar */
+#nav-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #424748;
+}
+
+.nav-lists {
+  float: left;
+}
+
+.nav-lists, .nav-links {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px, 20px;
+  text-decoration: none;
+}
+.nav-lists .nav-links:hover {
+  background-color: red;
+}

@@ -17,30 +17,26 @@
 </section>
 <h2>Additional Keyboard Build Notes</h2>
 <form id="add-review-form" method="POST"
-  action="/keyboards/<%= keyboard._id %>">
+  action="/keyboards/<%= keyboard._id %>/notes">
   <label>Additional Build Notes:</label>
   <textarea name="content"></textarea>
   <input type="submit" value="Add Notes">
 </form>
-<% if (keyboard.length) { %>
+<% if (keyboard.notes.length) { %>
   <table>
     <thead>
       <tr>
         <th>Date</th>
-        <th>Review</th>
-        <th>Rating</th>
-        <th>Review ID</th>
+        <th>Build Notes</th>
         <th>Delete</th>
       </tr>
     </thead>
     <tbody>
-      <% keyboards.reviews.forEach(function(k) { %>
+      <% keyboard.notes.forEach(function(n) { %>
       <tr>
-        <td><%= k.createdAt.toLocaleDateString() %></td>
-        <td><%= k.Name %></td>
-        <td><%= k.rating %></td>
-        <td><%= k.id %></td>
-        <td><form action='/reviews/<%= r._id %>?_method=DELETE' method="POST">
+        <td><%= n.createdAt.toLocaleDateString() %></td>
+        <td><%= n.content %></td>
+        <td><form action='/notes/<%= n._id %>?_method=DELETE' method="POST">
           <input type="submit" value="Delete" />
         </form></td>
       </tr>

@@ -5,8 +5,6 @@ const express = require('express');
 const methodOverride = require('method-override');
 const morgan = require('morgan')
 
-const keyboardsRouter = require('./routes/keyboards')
-
 // Internal Modules //
 const routes = require('./routes')
 
@@ -24,7 +22,10 @@ app.use(express.urlencoded({ extended: false })); //this renders create post.
 app.use(express.static('public'));
 app.use(methodOverride("_method"));
 
+const keyboardsRouter = require('./routes/keyboards')
+const notesRouter = require('./routes/notes')
 
+// Logger //
 app.use((req, res, next) => {
     console.log(req.url, req.method);
     next();
@@ -41,6 +42,7 @@ app.get((req, res) => {
 });
 //Internal Routes
 app.use("/keyboards", keyboardsRouter);
+app.use("/", notesRouter);
 
 // Server Listener //
 app.listen(PORT, () => console.log(`YO! Server is connected at ${PORT}`))

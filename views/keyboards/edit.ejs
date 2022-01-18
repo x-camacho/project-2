@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>dope blog app</title>
+	</head>
+	<body>
+		<nav>
+			<h1>Welcome to Blog App!</h1>
+			<ul>
+				<li>
+					<a href="/">home</a>
+				</li>
+				<li>
+					<a href="/articles">Articles</a>
+				</li>
+			</ul>
+		</nav>
+		<main>
+			<h1>Edit <%= article.name %></h1>
+			<form action="/articles/<%= article._id %>?_method=PUT" method="POST">
+				<input type="text" name="name" value="<%= article.name %>" />
+				<input type="submit" value="Update" />
+			</form>
+		</main>
+	</body>
+</html>

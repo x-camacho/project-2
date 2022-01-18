@@ -3,21 +3,24 @@
 <section id="show-page">
   <div>Name: </div>
   <div><%= keyboard.name %></div>
+  <div>Size: </div>
+  <div><%= keyboard.size %></div>
+  <div>Plate Material: </div>
+  <div><%= keyboard.plateMaterial %></div>
+  <div>Switch Type: </div>
+  <div><%= keyboard.switchType %></div>
+  <div>PCB Type: </div>
+  <div><%= keyboard.pcbType %></div>
+  <div>Oil Type: </div>
+  <div><%= keyboard.oilType %></div>
 </section>
-<h2>Reviews</h2>
+<h2>Notes</h2>
 <form id="add-review-form" method="POST"
   action="/keyboards/<%= keyboard._id %>">
-  <label>Review:</label>
+  <label>Notes:</label>
   <textarea name="content"></textarea>
   <label>Rating:</label>
-  <select name="rating">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-  </select>
-  <input type="submit" value="Add Review">
+  <input type="submit" value="Add Notes">
 </form>
 <% if (keyboard.length) { %>
   <table>
@@ -34,7 +37,7 @@
       <% keyboards.reviews.forEach(function(k) { %>
       <tr>
         <td><%= k.createdAt.toLocaleDateString() %></td>
-        <td><%= k.Name %></td>
+        <td><%= k.name %></td>
         <td><%= k.rating %></td>
         <td><%= k.id %></td>
         <td><form action='/reviews/<%= r._id %>?_method=DELETE' method="POST">

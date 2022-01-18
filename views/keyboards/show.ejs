@@ -1,23 +1,26 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div>Name: </div>
+  <div><h2>Keyboard Details</h2></div>
+  <div><h3>Name:</h3></div>
   <div><%= keyboard.name %></div>
+  <div><h3>Size:</h3></div>
+  <div><%= keyboard.size %></div>
+  <div><h3>PCB Type:</h3></div>
+  <div><%= keyboard.pcbType %></div>
+  <div><h3>Switch Type:</h3></div>
+  <div><%= keyboard.switchType %></div>
+  <div><h3>Oil Type:</h3></div>
+  <div><%= keyboard.oilType %></div>
+  <div><h3>Plate Material Type:</h3></div>
+  <div><%= keyboard.plateMaterial %></div>
 </section>
-<h2>Reviews</h2>
+<h2>Additional Keyboard Build Notes</h2>
 <form id="add-review-form" method="POST"
   action="/keyboards/<%= keyboard._id %>">
-  <label>Review:</label>
+  <label>Additional Build Notes:</label>
   <textarea name="content"></textarea>
-  <label>Rating:</label>
-  <select name="rating">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-  </select>
-  <input type="submit" value="Add Review">
+  <input type="submit" value="Add Notes">
 </form>
 <% if (keyboard.length) { %>
   <table>
@@ -45,6 +48,8 @@
     </tbody>
   </table>
   <% } else { %>
-  <h5>No Reviews Yet</h5>
+  <h5>No Additional Build Notes Recorded</h5>
   <% } %>
+
+
 <%- include('../partials/footer') %>

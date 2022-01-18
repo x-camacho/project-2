@@ -1,35 +1,19 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const keyboardSchema = new mongoose.Schema(
-    {
+const keyboardSchema = new Schema({
     name: {
         type: String,
-        required: [true, "You must provide a name for your board"],
-        },
-    size: {
-        type: String,
-        required: [true, "You must provide a size type for your board"],
-        },
-    plate_material: {
-        type: String,
-        required: [true, "You must provide a material type for your board"],
+        required: true
     },
-    switch_type: {
-        type: String,
-        required: [true, "You must provide a switch type for your board"],
-    },
-    PCB_type: {
-        type: String,
-        required: [true, "You must provide a type of circuit for your board"],
-    },
-    oil_type: {
-        type: String, 
-        required: [true, "You must provide a type of oil for the board"],
-    },
-    },
-    {
+    size: String,
+    plateMaterial: String,
+    switchType: String,
+    pcbType: String,
+    oilType: String, 
+    },{
         timestamps: true,
-    }
+    },
 );
 
-module.exports = mongoose.model("Keyboards", keyboardSchema);
+module.exports = mongoose.model("Keyboard", keyboardSchema);

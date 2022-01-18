@@ -1,21 +1,38 @@
 <%- include('../partials/header') %>
 
 <form id="new-form" action="/keyboards" method="POST">
-  <label>Title:</label>
-  <input type="text" name="title">
-  <label>Release Year:</label>
-  <input type="text" name="releaseYear">
-  <label>MPAA Rating</label>
-  <select name="mpaaRating">
-    <option value="G">G</option>
-    <option value="PG">PG</option>
-    <option value="PG-13">PG-13</option>
-    <option value="R">R</option>
+  <label>Name:</label>
+  <input type="text" name="name">
+  <label>Keyboard Size:</label>
+  <select name="size">
+    <option value="60%">60%</option>
+    <option value="65%">65%</option>
+    <option value="75%">75%</option>
+    <option value="TKL">TKL</option>
+    <option value="Full">Full</option>
   </select>
-  <label>Cast (separate actors with commas):</label>
-  <input type="text" name="cast">
-  <label>Now Showing:</label>
-  <input type="checkbox" name="nowShowing" checked>
+  <label>PCB Type:</label>
+  <select name="pcbType">
+    <option value="Hot Swap">Hot Swap</option>
+    <option value="Solderable">Solderable</option>
+  </select>
+  <label>Switch Type:</label>
+  <select name="switchType">
+    <option value="Clicky">Clicky</option>
+    <option value="Tactile">Tactile</option>
+    <option value="Linear">Linear</option>
+  </select>
+  <label>Oil Type:</label>
+  <select name="oilType">
+    <option value="Krytox 205g0">Krytox 205g0</option>
+    <option value="Krytox 105g0">Krytox 105g0</option>
+  </select>
+  <label>Plate Material:</label>
+  <select name="plateMaterial">
+    <option value="Brass">Brass</option>
+    <option value="Aluminum">Aluminum</option>
+    <option value="Pom">Pom</option>
+  </select>
   <input type="submit" value="Add Keyboard">
 </form>
 

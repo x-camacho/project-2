@@ -1,0 +1,50 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+  <div>Name: </div>
+  <div><%= keyboard.name %></div>
+</section>
+<h2>Reviews</h2>
+<form id="add-review-form" method="POST"
+  action="/keyboards/<%= keyboard._id %>">
+  <label>Review:</label>
+  <textarea name="content"></textarea>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  <input type="submit" value="Add Review">
+</form>
+<% if (keyboard.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Review</th>
+        <th>Rating</th>
+        <th>Review ID</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% keyboards.reviews.forEach(function(k) { %>
+      <tr>
+        <td><%= k.createdAt.toLocaleDateString() %></td>
+        <td><%= k.Name %></td>
+        <td><%= k.rating %></td>
+        <td><%= k.id %></td>
+        <td><form action='/reviews/<%= r._id %>?_method=DELETE' method="POST">
+          <input type="submit" value="Delete" />
+        </form></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <% } else { %>
+  <h5>No Reviews Yet</h5>
+  <% } %>
+<%- include('../partials/footer') %>

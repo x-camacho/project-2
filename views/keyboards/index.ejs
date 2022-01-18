@@ -3,23 +3,15 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Size</th>
-      <th>Plate Material</th>
-      <th>Switch Type</th>
-      <th>PCB Type</th>
-      <th>Oil Type</th>
+      <th>More Options</th>
     </tr>
   </thead>
   <tbody>
     <% keyboards.forEach( k => { %>
         <tr>
           <td><%= k.name %></td>
-          <td><%= k.size %></td>
-          <td><%= k.plateMaterial %></td>
-          <td><%= k.switchType %></td>
-          <td><%= k.pcbType %></td>
-          <td><%= k.oilType %></td>
-          <td><a href="/keyboards/<%= k._id %>">Keyboard Details</a></td>
+          <td><a href='/keyboards/<%= k._id %>'><input type="submit" value="Details"></td>
+          <td><form action='/keyboards/<%= k._id %>?_method=DELETE' method="POST"><input type="submit" value="Delete" /></form></td>
         </tr>
         <% }); %>
     </tbody>

@@ -1,20 +1,12 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div>Title: </div>
-  <div><%= movie.title %></div>
-  <div>Release Year: </div>
-  <div><%= movie.releaseYear %></div>
-  <div>Rating: </div>
-  <div><%= movie.mpaaRating %></div>
-  <div>Cast: </div>
-  <div><%= movie.cast.join(', ') %></div>
-  <div>Now Showing: </div>
-  <div><%= movie.nowShowing ? 'Yes' : 'Nope' %></div>
+  <div>Name: </div>
+  <div><%= keyboard.name %></div>
 </section>
 <h2>Reviews</h2>
 <form id="add-review-form" method="POST"
-  action="/movies/<%= movie._id %>/reviews">
+  action="/keyboards/<%= keyboard._id %>">
   <label>Review:</label>
   <textarea name="content"></textarea>
   <label>Rating:</label>
@@ -27,7 +19,7 @@
   </select>
   <input type="submit" value="Add Review">
 </form>
-<% if (movie.reviews.length) { %>
+<% if (keyboard.length) { %>
   <table>
     <thead>
       <tr>
@@ -39,12 +31,12 @@
       </tr>
     </thead>
     <tbody>
-      <% movie.reviews.forEach(function(r) { %>
+      <% keyboards.reviews.forEach(function(k) { %>
       <tr>
-        <td><%= r.createdAt.toLocaleDateString() %></td>
-        <td><%= r.content %></td>
-        <td><%= r.rating %></td>
-        <td><%= r.id %></td>
+        <td><%= k.createdAt.toLocaleDateString() %></td>
+        <td><%= k.Name %></td>
+        <td><%= k.rating %></td>
+        <td><%= k.id %></td>
         <td><form action='/reviews/<%= r._id %>?_method=DELETE' method="POST">
           <input type="submit" value="Delete" />
         </form></td>

@@ -4,7 +4,7 @@
   <label>Name:</label>
   <input type="text" name="name">
   <label>Keyboard Size:</label>
-  <select name="keyboardSize">
+  <select name="size">
     <option value="60%">60%</option>
     <option value="65%">65%</option>
     <option value="75%">75%</option>
@@ -15,6 +15,12 @@
   <select name="pcbType">
     <option value="Hot Swap">Hot Swap</option>
     <option value="Solderable">Solderable</option>
+  </select>
+  <label>Switch Type:</label>
+  <select name="switchType">
+    <option value="Clicky">Clicky</option>
+    <option value="Tactile">Tactile</option>
+    <option value="Linear">Linear</option>
   </select>
   <label>Oil Type:</label>
   <select name="oilType">
@@ -27,7 +33,7 @@
     <option value="Aluminum">Aluminum</option>
     <option value="Pom">Pom</option>
   </select>
-  <input type="submit" value="Add Keyboard" action="/keyboards" method="POST">
+  <input type="submit" value="Add Keyboard">
 </form>
 
 <%- include('../partials/footer') %>

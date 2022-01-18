@@ -1,5 +1,4 @@
-const Keyboard = require('../models/keyboard')
-const db = require("../models");
+const Keyboard = require('../models/keyboard');
 
 // Index
 // function index(req, res) {
@@ -9,7 +8,7 @@ const db = require("../models");
 //   }
 
   const index = (req, res) => {
-    db.keyboards.find({}, function (err, allKeyboards) {
+    Keyboard.find({}, function (err, allKeyboards) {
         if (err) return res.send(err);
         const context = {keyboards: allKeyboards};
         console.log(context)
@@ -19,7 +18,7 @@ const db = require("../models");
 
 // Show
 function show(req, res) {
-    db.keyboards.findById(req.params.id, function(err, keyboard) {
+    Keyboard.findById(req.params.id, function(err, keyboard) {
       res.render('keyboards/show', { name: 'Keyboard Detail', keyboard });
     });
   }
@@ -30,25 +29,27 @@ function newKeyboards(req, res) {
   }
 
 // Create
-// function create(req, res) {
-//    db.keyboards(req.body);
-//     keyboard.save(function(err) {
-//       if (err) return res.redirect('/keyboards/new');
-//       // for now, redirect right back to new.ejs
-//       res.redirect('/keyboards');
-//     });
-//   }
-
-  const create = (req, res) => {
-    db.keyboards.create(req.body, function(err, createKeyboard) {
-      if(err) return res.send(err);
-      return res.redirect("/keyboards");
+function create(req, res) {
+    const keyboard = new Keyboard(req.body);
+    console.log(keyboard)
+    keyboard.save(function(err) {
+      // one way to handle errors
+      if (err) return res.redirect('/keyboards/new');
+      // for now, redirect right back to new.ejs
+      res.redirect('/keyboards');
     });
-};
+  }
+
+//   const create = (req, res) => {
+//     db.keyboards.create(req.body, function(err, createKeyboard) {
+//       if(err) return res.send(err);
+//       return res.redirect("/keyboards");
+//     });
+// };
 
 // Edit
 const edit = (req, res) => {
-	db.keyboards.findById(req.params.id, (err, foundKeyboards) => {
+	Keyboard.findById(req.params.id, (err, foundKeyboards) => {
 		if (err) return res.send(err);
 
 		const context = { Keyboards: foundKeyboards };
@@ -57,7 +58,7 @@ const edit = (req, res) => {
 };
 // Update
 const update = (req, res) => {
-	db.keyboards.findByIdAndUpdate(
+	Keyboard.findByIdAndUpdate(
 		req.params.id,
 		{
 			$set: {
@@ -73,7 +74,7 @@ const update = (req, res) => {
 };
 // Delete
 const destroy = (req, res) => {
-	db.keyboards.findByIdAndDelete(req.params.id, (err, deletedKeyboards) => {
+	Keyboard.findByIdAndDelete(req.params.id, (err, deletedKeyboards) => {
 		if (err) return res.send(err);
 
 		return res.redirect("/keyboards");

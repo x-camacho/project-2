@@ -12,7 +12,3 @@ mongoose
 		)
 	)
 	.catch((err) => console.log(`MongoDB connection FAILED :( Error: ${err}`));
-
-	module.exports = {
-		keyboards: require("./keyboard")
-	}

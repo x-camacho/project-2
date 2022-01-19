@@ -10,7 +10,8 @@ const passport = require('passport');
 
 // Internal Modules //
 const routes = require('./routes')
-
+const keyboardsRouter = require('./routes/keyboards')
+const notesRouter = require('./routes/notes')
 // Instanced Module //
 const app = express();
 
@@ -25,8 +26,9 @@ app.use(express.urlencoded({ extended: false })); //this renders create post.
 app.use(express.static('public'));
 app.use(methodOverride("_method"));
 
-const keyboardsRouter = require('./routes/keyboards')
-const notesRouter = require('./routes/notes')
+// Passport Middleware //
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Logger //
 app.use((req, res, next) => {

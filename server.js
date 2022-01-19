@@ -1,9 +1,12 @@
 require("dotenv").config();
 require("./models");
+require('./config/passport');
 // External Modules //
 const express = require('express');
 const methodOverride = require('method-override');
-const morgan = require('morgan')
+const morgan = require('morgan');
+const session = require('express-session');
+const passport = require('passport');
 
 // Internal Modules //
 const routes = require('./routes')

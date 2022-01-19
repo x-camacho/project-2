@@ -4,10 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel='stylesheet' href='/public/css/style.css'>
+  <link type="text/css" rel='stylesheet' href='../css/style.css' />
 </head>
 <body>
-  <div>
+<!-- Partials nav bar css -->
+<style>
+  /* Partials nav bar */
+#nav-items {
+  list-style: none;
+  margin: 10;
+  padding: 10;
+  overflow: hidden;
+  position: relative;
+  background-color: #59821e;
+}
+
+.nav-lists {
+  float: left;
+  margin: 15px;
+  padding: 15px;
+  font-size: 25px;
+}
+
+.nav-lists, .nav-links {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px, 20px;
+  text-decoration: none;
+}
+.nav-lists .nav-links:hover {
+  background-color: #b4be60;
+}
+</style>
+<div>
     <nav>
         <ul id="nav-items">
             <li class="nav-lists"><a class="nav-links" href="/">Home</a></li>

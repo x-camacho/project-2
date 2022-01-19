@@ -1,20 +1,27 @@
 <%- include('../partials/header') %>
-<table id="list">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>More Options</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% keyboards.forEach( k => { %>
-        <tr>
-          <td><%= k.name %></td>
-          <td><a href='/keyboards/<%= k._id %>'><input type="submit" value="Details"></td>
-          <td><form action='/keyboards/<%= k._id %>?_method=DELETE' method="POST"><input type="submit" value="Delete" /></form></td>
-        </tr>
-        <% }); %>
-    </tbody>
-  </table>
+
+<div class="list-container">
+  <div class="list-container-child">
+
+  <h1> Keyboard List</h1>
+  <table id="list">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>More Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% keyboards.forEach( k => { %>
+          <tr>
+            <td><%= k.name %></td>
+            <td><a href='/keyboards/<%= k._id %>'><input type="submit" value="Details"></td>
+            <td><form action='/keyboards/<%= k._id %>?_method=DELETE' method="POST"><input type="submit" value="Delete" /></form></td>
+          </tr>
+          <% }); %>
+      </tbody>
+    </table>
+  </div>
+</div>
   
 <%- include('../partials/footer') %>

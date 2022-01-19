@@ -1,8 +1,7 @@
-<%- include('../partials/header') %>
+  <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div><h2>Keyboard Details</h2></div>
-  <div><h2>Keyboard Build Name: <%= keyboard.name %></h2></div>
+  <div><h2>Keyboard Build: <%= keyboard.name %></h2></div>
   <div><h3>Size:</h3></div>
   <div><%= keyboard.size %></div>
   <div><h3>PCB Type:</h3></div>
@@ -14,7 +13,8 @@
   <div><h3>Plate Material Type:</h3></div>
   <div><%= keyboard.plateMaterial %></div>
 </section>
-<h3>Edit <%= keyboard.name %></h3>
+
+<h3>Edit <%= keyboard.name %>:</h3>
 <form action="/keyboards/<%= keyboard._id %>?_method=PUT" method="POST">
   <label>Name:</label>
   <input type="text" name="name" value="<%= keyboard.name %>" />
@@ -53,11 +53,15 @@
     <option value="Aluminum">Aluminum</option>
     <option value="Pom">Pom</option>
   </select>
-  <input type="submit" value="Update" method="POST"
-  action="/keyboards/<%= keyboard._id %>/notes">
+  <input type="submit" value="Update">
+</form>
 
-
-<h2>Additional Keyboard Build Notes</h2>
+  <h2>Keyboardy Build Notes</h2>
+  <form id="add-review-form" method="POST"
+    action="/keyboards/<%= keyboard._id %>/notes">
+    <textarea name="content"></textarea>
+    <input type="submit" value="Add Notes">
+  </form>
 <% if (keyboard.notes.length) { %>
   <table>
     <thead>
@@ -82,12 +86,5 @@
   <% } else { %>
   <h5>No Additional Build Notes Recorded</h5>
   <% } %>
-  
-  <form id="add-review-form" method="POST"
-  action="/keyboards/<%= keyboard._id %>/notes">
-  <textarea name="content"></textarea>
-  <input type="submit" value="New Note"></form>
 
-
-
-<%- include('../partials/footer') %>
+<%- include('../partials/footer.ejs') %>

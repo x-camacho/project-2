@@ -20,7 +20,24 @@ function create(req, res) {
     });
   }
 
+  // Update
+const update = (req, res) => {
+	Keyboard.findByIdAndUpdate({"notes.id":req.params.id},
+		{
+			$set: {
+				...req.body,
+			},
+		},
+		{ new: true },
+		(err, updatedKeyboards) => {
+			if (err) return res.send(err);
+			return res.redirect(`/keyboards/${updatedKeyboards._id}`);
+		}
+	);
+};
+
 module.exports = {
   create,
   destroy,
+  update,
 };

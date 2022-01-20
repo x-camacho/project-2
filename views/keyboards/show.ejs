@@ -1,21 +1,25 @@
 <%- include ('../partials/tempBar.ejs') %>
 
 
-<section id="show-page">
-  <div><h2>Keyboard Details</h2></div>
-  <div class="list-title">
-  <h2>Keyboard Build Name: <%= keyboard.name %></h2></div>
-  <div><h3>Size:</h3></div>
-  <div><%= keyboard.size %></div>
-  <div><h3>PCB Type:</h3></div>
-  <div><%= keyboard.pcbType %></div>
-  <div><h3>Switch Type:</h3></div>
-  <div><%= keyboard.switchType %></div>
-  <div><h3>Oil Type:</h3></div>
-  <div><%= keyboard.oilType %></div>
-  <div><h3>Plate Material Type:</h3></div>
-  <div><%= keyboard.plateMaterial %></div>
-</section>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-image">
+        <span class="card-title"><%= keyboard.name %></span>
+      </div>
+      <div class="card-content">
+        <h2>Keyboard Details</h2>
+        <h4>Keyboard Build Name: <%= keyboard.name %></h4></div>
+        <div><h4>Size: <%= keyboard.size %> </h></div>
+        <div><h3>PCB Type: <%= keyboard.pcbType %> </h3></div>
+        <div><h3>Switch Type: <%= keyboard.switchType %> </h3></div>
+        <div><h3>Oil Type: <%= keyboard.oilType %></div>
+        <div><h3>Plate Material Type: <%= keyboard.plateMaterial %></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <h3>Edit: <%= keyboard.name %></h3>
 <form action="/keyboards/<%= keyboard._id %>?_method=PUT" method="POST">
   <label>Name:</label>

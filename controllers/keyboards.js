@@ -1,4 +1,5 @@
 const Keyboard = require('../models/keyboard');
+const Keyboards = require('../models/keyboard');
 const Keyboarder = require('../models/keyboarder');
 
 ////Index
@@ -38,20 +39,11 @@ function newKeyboards(req, res) {
 // Create
 function create(req, res) {
     const keyboard = new Keyboard(req.body);
-    console.log(keyboard)
     keyboard.save(function(err) {
       if (err) return res.redirect('/keyboards/new');
       res.redirect('/keyboards');
     });
   }
-
-// function create(req, res, next) {
-// 	req.user.keyboards.push(req.body);
-// 	req.user.save(function (err) {
-// 	  res.redirect("/keyboards");
-// 	});
-//   }
-
 
 // Edit
 const edit = (req, res) => {

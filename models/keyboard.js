@@ -12,6 +12,10 @@ const keyboardSchema = new Schema({
         type: String,
         required: true
     },
+    keyboarder: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Keyboarder',
+    },
     size: String,
     plateMaterial: String,
     switchType: String,

@@ -1,7 +1,7 @@
+
 * {
     box-sizing: border-box;
     font-family: Helvetica;
-    color: #424748;
   }
   
   body {
@@ -14,28 +14,28 @@
       "main"
   }
   
-  body > nav {
+  /* body > nav {
     grid-area: nav;
-    background-color: #B8C0C2;
+    background-color: #d3d6cd;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 0 20px 0 30px;
-  }
+  } */
   
-  nav > img {
+  /* nav > img {
     width: 34px;
     object-fit: contain;
     margin-right: auto;
   }
-  
+   */
   body > main {
     grid-area: main;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #E8ECEB;
-    padding: 20px;
+    background-color: #f9fcf2;
+    padding: 30px;
     overflow-y: scroll;
   }
   
@@ -43,7 +43,7 @@
     margin-bottom: 50px;
   }
   
-  nav > a {
+  /* nav > a {
     margin: 20px;
     text-decoration: none;
     padding: 10px;
@@ -57,12 +57,17 @@
   
   nav > a.active {
     color: white;
-  }
+  } */
   
-  #new-form {
+  /* #new-form {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(2, minmax(auto, 22rem));
+  } */
+  #new-form {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
   }
   
   #new-form *, #add-review-form *  {

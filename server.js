@@ -1,7 +1,6 @@
 require("dotenv").config();
 require("./models");
 require('./config/passport');
-// External Modules //
 const express = require('express');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
@@ -26,9 +25,23 @@ app.use(express.urlencoded({ extended: false })); //this renders create post.
 app.use(express.static('public'));
 app.use(methodOverride("_method"));
 
+// Session Middleware
+app.use(
+    session({
+      secret: "keyboardyISLIT!",
+      resave: false.valueOf,
+      saveUninitialized: true,
+    })
+  );
+
 // Passport Middleware //
 app.use(passport.initialize());
 app.use(passport.session());
+
+//Internal Routes
+app.use("/keyboards", keyboardsRouter);
+app.use("/", notesRouter);
+
 
 // Logger //
 app.use((req, res, next) => {
@@ -45,9 +58,6 @@ app.get('/', (req, res) => { //Renders Landing Page
 app.get((req, res) => {
 	res.send("404! Error! Page not found :(");
 });
-//Internal Routes
-app.use("/keyboards", keyboardsRouter);
-app.use("/", notesRouter);
 
 // Server Listener //
 app.listen(PORT, () => console.log(`YO! Server is connected at ${PORT}`))

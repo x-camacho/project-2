@@ -1,6 +1,6 @@
 const passport = require('passport');
 const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
-const Student = require('../models/student')
+const Keyboarder = require('../models/keyboarder')
 //
 passport.use(
     new GoogleStrategy(
@@ -10,19 +10,19 @@ passport.use(
             callbackURL: process.env.GOOGLE_CALLBACK,
         },
         function (accessToken, refreshToken, profile, cb) {
-            Student.findOne({googleId: profile.id }, function(err, student) {
+            Keyboarder.findOne({googleId: profile.id }, function(err, keyboarder) {
                 if (err) return cb(err);
-                if (student) {
-                    return cb(null, student);
+                if (keyboarder) {
+                    return cb(null, keyboarder);
                 } else {
-                    const newStudent = new Student({
+                    const newKeyboarder = new Keyboarder({
                         name: profile.displayName,
                         email: profile.emails[0].value,
                         googleId: profile.id,
                     });
-                    newStudent.save(function (err) {
+                    newKeyboarder.save(function (err) {
                         if (err) return cb(err);
-                        return cb(null, newStudent)
+                        return cb(null, newKeyboarder)
                     });
                 }
             });
@@ -31,15 +31,15 @@ passport.use(
 );
 
 //set up session for now logged in user 
-passport.serializeUser(function (student, done) {
-    done(null, student.id);
+passport.serializeUser(function (keyboarder, done) {
+    done(null, keyboarder.id);
 });
 
 
 //this is called every time a req comes in from an existing
 //logged in user - we return this assigned user to req.user object
 passport.deserializeUser(function (id, done) {
-    Student.findById(id, function (err, student) {
-      done(err, student);
+    Keyboarder.findById(id, function (err, keyboarder) {
+      done(err, keyboarder);
     });
 });

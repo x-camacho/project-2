@@ -1,12 +1,8 @@
+const keyboard = require('../models/keyboard');
 const Keyboard = require('../models/keyboard');
+const Keyboarder = require('../models/keyboarder');
 
-// Index
-// function index(req, res) {
-//     db.keyboards.find({}, function(err, keyboards) {
-//       res.render('keyboards/index', { name: 'All Keyboards', keyboards });
-//     });
-//   }
-
+//Index
   const index = (req, res) => {
     Keyboard.find({}, function (err, allKeyboards) {
         if (err) return res.send(err);

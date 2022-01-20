@@ -1,10 +1,10 @@
-<%- include('../partials/header') %>
+<%- include ('../partials/tempBar.ejs') %>
+
 
 <section id="show-page">
-
   <div><h2>Keyboard Details</h2></div>
-  
-  <div class="list-title"><h2>Keyboard Build Name: <%= keyboard.name %></h2></div>
+  <div class="list-title">
+  <h2>Keyboard Build Name: <%= keyboard.name %></h2></div>
   <div><h3>Size:</h3></div>
   <div><%= keyboard.size %></div>
   <div><h3>PCB Type:</h3></div>
@@ -16,12 +16,12 @@
   <div><h3>Plate Material Type:</h3></div>
   <div><%= keyboard.plateMaterial %></div>
 </section>
-<h3>Edit <%= keyboard.name %></h3>
+<h3>Edit: <%= keyboard.name %></h3>
 <form action="/keyboards/<%= keyboard._id %>?_method=PUT" method="POST">
   <label>Name:</label>
   <input type="text" name="name" value="<%= keyboard.name %>" />
   <label>Keyboard Size:</label>
-  <select name="size">
+  <select class="browser-default">
     <option><%= keyboard.size %></option>
     <option value="60%">60%</option>
     <option value="65%">65%</option>
@@ -30,26 +30,26 @@
     <option value="Full">Full</option>
   </select>
   <label>PCB Type:</label>
-  <select name="pcbType">
+  <select class="browser-default">
     <option><%= keyboard.pcbType %></option>
     <option value="Hot Swap">Hot Swap</option>
     <option value="Solderable">Solderable</option>
   </select>
   <label>Switch Type:</label>
-  <select name="switchType">
+  <select class="browser-default">
     <option><%= keyboard.switchType %></option>
     <option value="Clicky">Clicky</option>
     <option value="Tactile">Tactile</option>
     <option value="Linear">Linear</option>
   </select>
   <label>Oil Type:</label>
-  <select name="oilType">
+  <select class="browser-default">
     <option><%= keyboard.oilType %></option>
     <option value="Krytox 205g0">Krytox 205g0</option>
     <option value="Krytox 105g0">Krytox 105g0</option>
   </select>
   <label>Plate Material:</label>
-  <select name="plateMaterial">
+  <select class="browser-default">
     <option><%= keyboard.plateMaterial %></option>
     <option value="Brass">Brass</option>
     <option value="Aluminum">Aluminum</option>
@@ -89,7 +89,4 @@
   action="/keyboards/<%= keyboard._id %>/notes">
   <textarea name="content"></textarea>
   <input type="submit" value="New Note"></form>
-
-
-
-<%- include('../partials/footer') %>
+  </body>

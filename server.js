@@ -1,6 +1,7 @@
 require("dotenv").config();
 require("./models");
 require('./config/passport');
+
 const express = require('express');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
@@ -8,10 +9,10 @@ const session = require('express-session');
 const passport = require('passport');
 
 // Internal Modules //
-const routes = require('./routes')
 const keyboardsRouter = require('./routes/keyboards')
 const notesRouter = require('./routes/notes')
 const indexRoutes = require('./routes/index');
+
 // Instanced Module //
 const app = express();
 
@@ -19,17 +20,21 @@ const app = express();
 const PORT = process.env.PORT || 4000; //for deployment in heroku
 app.set("view engine", "ejs");
 
-// Middleware //
+// Middleware + Logger//
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false })); //this renders create post.
 app.use(express.static('public'));
 app.use(methodOverride("_method"));
+app.use((req, res, next) => {
+    console.log(req.url, req.method);
+    next();
+});
 
-// Session Middleware
+// Session Middleware //
 app.use(
     session({
-      secret: "keyboardyISLIT!",
+      secret: "keyboardyBOI!!",
       resave: false.valueOf,
       saveUninitialized: true,
     })
@@ -44,26 +49,14 @@ app.use("/keyboards", keyboardsRouter);
 app.use("/", notesRouter);
 app.use('/', indexRoutes);
 
-
-// Logger //
-app.use((req, res, next) => {
-    console.log(req.url, req.method);
-    next();
-});
-
-//*=== Routes & Controllers =====*//
 // Home Route
 app.get('/', (req, res) => { //Renders Landing Page
-    res.render("index");
+    res.send("index",);
 });
 //404 Route
 app.get((req, res) => {
 	res.send("404! Error! Page not found :(");
 });
 
-// Server Listener //
+//* ------------- Server Listener ---------------------*//
 app.listen(PORT, () => console.log(`YO! Server is connected at ${PORT}`))
-
-
-
-// DATABASE_URL= mongodb+srv://keybonk:ThoccProvider123@project0.slydr.mongodb.net/Keyboards?retryWrites=true&w=majority

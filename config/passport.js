@@ -10,6 +10,7 @@ passport.use(
             callbackURL: process.env.GOOGLE_CALLBACK,
         },
         function (accessToken, refreshToken, profile, cb) {
+            console.log(profile)
             Keyboarder.findOne({googleId: profile.id }, function(err, keyboarder) {
                 if (err) return cb(err);
                 if (keyboarder) {

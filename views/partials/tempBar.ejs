@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Welcome to Keyboardy!</title>
+  <title>Keyboardy!</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
   <!-- Materialize Icons -->
@@ -12,8 +12,11 @@
   <link rel="stylesheet" href="/css/style.css" />
   <!-- JavaScript for Materialize -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });</script>
 </head>
-
 <body>
   <div class="navbar-fixed">
     <nav>
@@ -22,16 +25,13 @@
         <ul class="right">
             <!-- Place Nav UI Here -->
             <ul class="right">
-              <!-- new html below -->
-              <li>
-                <% if (user) { %>
-                    <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-                  <% } else { %>
-                    <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-                  <% } %>
-                  </li>
-                </ul>
+              <ul id="nav-items">
+                <li class="nav-lists"><a class="nav-links" href="/keyboards">Keyboard List</a></li>
+                <li class="nav-lists"><a class="nav-links" href="/keyboards/new">Build</a></li>
             </ul>
-          </div>
-        </nav>
-      </div>
+        </ul>
+    </ul>
+    </div>
+    </nav>
+    </div>
+</body>

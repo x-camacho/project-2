@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Welcome to Keyboardy!</title>
+  <title>Keyboardy!</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
   <!-- Materialize Icons -->
@@ -22,16 +22,18 @@
         <ul class="right">
             <!-- Place Nav UI Here -->
             <ul class="right">
-              <!-- new html below -->
-              <li>
-                <% if (user) { %>
-                    <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-                  <% } else { %>
-                    <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-                  <% } %>
-                  </li>
-                </ul>
+              <ul id="nav-items">
+                <li class="nav-lists"><a class="nav-links" href="/keyboards">Keyboard List</a></li>
+                <li class="nav-lists"><a class="nav-links" href="/keyboards/new">Build</a></li>
+                <li>
+                  <% if (user) { %>
+                      <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+                    <% } else { %>
+                      <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+                    <% } %>
+              </li>
             </ul>
-          </div>
-        </nav>
+        </ul>
       </div>
+    </nav>
+  </div>

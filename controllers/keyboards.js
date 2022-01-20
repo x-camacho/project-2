@@ -1,23 +1,24 @@
 const Keyboard = require('../models/keyboard');
 const Keyboarder = require('../models/keyboarder');
 
+////Index
+// function index(req, res) {
+// 	Keyboarder.find({}, function(err, keyboarders) {
+// 	  res.render('keyboards/index', { 
+// 		keyboarders,
+// 		user: req.user,
+// 	   });
+// 	});
+//   }
 
-function index(req, res) {
-	Keyboarder.find({}, function(err, keyboarders) {
-	  res.render('keyboards/index', { 
-		keyboarders,
-		user: req.user,
-	   });
-	   console.log(keyboarders);
-	});
-  }
-
-//Index
+//Index2
   const index2 = (req, res) => {
     Keyboard.find({}, function (err, allKeyboards) {
         if (err) return res.send(err);
-        const context = {keyboards: allKeyboards};
-        console.log(context)
+        const context = {
+			keyboards: allKeyboards,
+			user: req.user,
+		};
         return res.render("keyboards/index", context);
     });
 };
@@ -39,19 +40,18 @@ function create(req, res) {
     const keyboard = new Keyboard(req.body);
     console.log(keyboard)
     keyboard.save(function(err) {
-      // one way to handle errors
       if (err) return res.redirect('/keyboards/new');
-      // for now, redirect right back to new.ejs
       res.redirect('/keyboards');
     });
   }
 
-//   const create = (req, res) => {
-//     db.keyboards.create(req.body, function(err, createKeyboard) {
-//       if(err) return res.send(err);
-//       return res.redirect("/keyboards");
-//     });
-// };
+// function create(req, res, next) {
+// 	req.user.keyboards.push(req.body);
+// 	req.user.save(function (err) {
+// 	  res.redirect("/keyboards");
+// 	});
+//   }
+
 
 // Edit
 const edit = (req, res) => {
@@ -87,7 +87,7 @@ const destroy = (req, res) => {
 	});
 };
 module.exports = {
-	index,
+	// index,
 	index2,
 	show,
 	create,

@@ -1,9 +1,19 @@
-const keyboard = require('../models/keyboard');
 const Keyboard = require('../models/keyboard');
 const Keyboarder = require('../models/keyboarder');
 
+
+function index(req, res) {
+	Keyboarder.find({}, function(err, keyboarders) {
+	  res.render('keyboards/index', { 
+		keyboarders,
+		user: req.user,
+	   });
+	   console.log(keyboarders);
+	});
+  }
+
 //Index
-  const index = (req, res) => {
+  const index2 = (req, res) => {
     Keyboard.find({}, function (err, allKeyboards) {
         if (err) return res.send(err);
         const context = {keyboards: allKeyboards};
@@ -78,6 +88,7 @@ const destroy = (req, res) => {
 };
 module.exports = {
 	index,
+	index2,
 	show,
 	create,
 	new: newKeyboards,

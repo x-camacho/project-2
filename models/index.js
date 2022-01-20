@@ -1,6 +1,5 @@
 //Connect the db to MongoDBAtlas
 const mongoose = require('mongoose');
-const keyboard = require('./keyboard');
 const db = mongoose.connection;
 const dbUrl = process.env.DATABASE_URL;
 

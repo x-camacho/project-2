@@ -11,6 +11,7 @@ const passport = require('passport');
 const routes = require('./routes')
 const keyboardsRouter = require('./routes/keyboards')
 const notesRouter = require('./routes/notes')
+const indexRoutes = require('./routes/index');
 // Instanced Module //
 const app = express();
 
@@ -41,6 +42,7 @@ app.use(passport.session());
 //Internal Routes
 app.use("/keyboards", keyboardsRouter);
 app.use("/", notesRouter);
+app.use('/', indexRoutes);
 
 
 // Logger //

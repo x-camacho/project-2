@@ -2,7 +2,7 @@ const router = require("express").Router();
 const ctrl = require("../controllers");
 
 // //routes
-router.get("/", ctrl.Keyboards.index);
+router.get("/", ctrl.Keyboards.index2);
 router.get("/new", ctrl.Keyboards.new)
 router.get("/:id", ctrl.Keyboards.show);
 router.post("/", ctrl.Keyboards.create);

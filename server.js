@@ -1,13 +1,16 @@
 require("dotenv").config();
 require("./models");
-// External Modules //
+require('./config/passport');
 const express = require('express');
 const methodOverride = require('method-override');
-const morgan = require('morgan')
+const morgan = require('morgan');
+const session = require('express-session');
+const passport = require('passport');
 
 // Internal Modules //
 const routes = require('./routes')
-
+const keyboardsRouter = require('./routes/keyboards')
+const notesRouter = require('./routes/notes')
 // Instanced Module //
 const app = express();
 
@@ -22,8 +25,23 @@ app.use(express.urlencoded({ extended: false })); //this renders create post.
 app.use(express.static('public'));
 app.use(methodOverride("_method"));
 
-const keyboardsRouter = require('./routes/keyboards')
-const notesRouter = require('./routes/notes')
+// Session Middleware
+app.use(
+    session({
+      secret: "keyboardyISLIT!",
+      resave: false.valueOf,
+      saveUninitialized: true,
+    })
+  );
+
+// Passport Middleware //
+app.use(passport.initialize());
+app.use(passport.session());
+
+//Internal Routes
+app.use("/keyboards", keyboardsRouter);
+app.use("/", notesRouter);
+
 
 // Logger //
 app.use((req, res, next) => {
@@ -40,9 +58,6 @@ app.get('/', (req, res) => { //Renders Landing Page
 app.get((req, res) => {
 	res.send("404! Error! Page not found :(");
 });
-//Internal Routes
-app.use("/keyboards", keyboardsRouter);
-app.use("/", notesRouter);
 
 // Server Listener //
 app.listen(PORT, () => console.log(`YO! Server is connected at ${PORT}`))

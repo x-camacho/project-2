@@ -146,3 +146,42 @@ table {
       margin-bottom: 2rem;
   }
 
+/* Home Page css */
+/* home page css */
+.home-nav-items {
+  list-style: none;
+  padding: 10;
+  overflow: hidden;
+  position: relative;
+  background-color: #59821e;
+  display: flex;
+}
+
+.home-nav-lists {
+  float: left;
+  margin: 10px;
+  padding: 10px;
+  font-size: 25px;
+  flex-direction: row;
+}
+
+.home-nav-lists, .home-nav-links {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+.home-nav-lists .home-nav-links:hover {
+  background-color: #b4be60;
+}
+a {
+  text-decoration: none;
+}
+.login {
+  position: relative;
+  border: red;
+}
+.login-container.login:hover {
+  background-color: #b4be60;
+}

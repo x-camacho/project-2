@@ -9,12 +9,12 @@ Similar to a fancy pen used to write. The new digital age requires us to constan
 So if we have to use a keyboard for so long everyday why don't we try to get the best feel and experience we want?
 It is because many people do not know how to create their own keyboard or even where to start.
 This website serves as a one stop site for people to save and create their own potential keyboard. Each user would be able to create 
-as many keyboards as she wants
-
-
+as many keyboards as they want and alter the keyboards that they create. Another page will help provide an first look on what 
+aspects of the keyboard they would need to be aware of. Simply put, the web application will help new hobbyists for keyboards to 
+learn how to create a new keyboard and to save and update existing keyboards that they have created.
 
 ## Brainstorm
-In this sec
+Together, we came up with this idea after hearing the sheer acoustics of a premium keyboard. 
 
 <img src= "public/images/wireframe1.png" width= "300" height= "300">
 

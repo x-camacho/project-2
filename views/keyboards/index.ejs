@@ -6,14 +6,23 @@
       <% keyboards.forEach( k => { %>
         <div class="row">
           <div class="col s12 m6">
-            <div class="card dark green darken-1">
+            <div class="card dark blue-grey lighten-1">
               <div class="card-content white-text">
                 <span class="card-title"><%= k.name %></span>
-                  <p></p>
+                  <p>
+                    <% if (keyboards.notes) { %>
+                    <% keyboard.notes.forEach(function(n) { %>
+                      <tr>
+                        <td><%= n.content %></td>
+                  </p>
+                  <% }); %>
+                  <% } else { %>
+                    <h5>No Additional Build Notes Recorded</h5>
+                    <% } %>
               </div>
               <div class="card-action">
-                <a class="waves-effect waves-light btn" href='/keyboards/<%= k._id %>'>Details</a>
-                <a class="waves-effect waves-light btn">
+                <a class="waves-effect waves-light btn blue-grey lighten-3" href='/keyboards/<%= k._id %>'>Details</a>
+                <a class="waves-effect waves-light btn blue-grey lighten-3">
                 <form action='/keyboards/<%= k._id %>?_method=DELETE' method="POST">
                   <input type="submit" value="Delete" /></form></a>
               </div>

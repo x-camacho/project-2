@@ -2,25 +2,28 @@
 
 <div class="list-containers">
   <div class="list-container-child">
-  <h1> Keyboard List</h1>
-  <table id="list">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>More Options</th>
-      </tr>
-    </thead>
-    <tbody>
+  <h3> Keyboard List</h3>
       <% keyboards.forEach( k => { %>
-          <tr>
-            <td><%= k.name %></td>
-            <td><a href='/keyboards/<%= k._id %>'><input type="submit" value="Details"></td>
-            <td><form action='/keyboards/<%= k._id %>?_method=DELETE' method="POST"><input type="submit" value="Delete" /></form></td>
-          </tr>
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="card dark green darken-1">
+              <div class="card-content white-text">
+                <span class="card-title"><%= k.name %></span>
+                  <p></p>
+              </div>
+              <div class="card-action">
+                <a href='/keyboards/<%= k._id %>'>Details</a>
+                <div>
+                <form action='/keyboards/<%= k._id %>?_method=DELETE' method="POST"><input type="submit" value="Delete" /></form>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
           <% }); %>
       </tbody>
     </table>
   </div>
-
 </div>
   

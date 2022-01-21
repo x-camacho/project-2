@@ -12,6 +12,7 @@ const passport = require('passport');
 const keyboardsRouter = require('./routes/keyboards')
 const notesRouter = require('./routes/notes')
 const indexRoutes = require('./routes/index');
+const keyboarderRoutes = require('./routes/keyboarders')
 
 // Instanced Module //
 const app = express();
@@ -48,6 +49,7 @@ app.use(passport.session());
 app.use("/keyboards", keyboardsRouter);
 app.use("/", notesRouter);
 app.use('/', indexRoutes);
+app.use('/', keyboarderRoutes);
 
 // Home Route
 app.get('/', (req, res) => { //Renders Landing Page

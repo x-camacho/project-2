@@ -1,9 +1,12 @@
 # project-2
 Mech Keyboard Builder
+In this section of the repo we go over the thought process and story creation of our fun keyboard web application. 
+
 
 ## Concept: 
 
 ## Brainstorm
+In this sec
 
 <img src= "public/images/wireframe1.png" width= "300" height= "300">
 

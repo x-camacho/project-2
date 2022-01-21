@@ -3,8 +3,16 @@ Mech Keyboard Builder
 
 ## Concept: 
 
+## Brainstorm
+
+<img src= "public/images/wireframe1.png" width= "300" height= "300">
+
+<img src= "public/images/wireframe2.png" width= "300" height= "300">
+
+
 ## Wireframes:
-<img src="public/images/wireframe1.png" width 300 height 300>
+
+
 
 ## User Story
 User Stories

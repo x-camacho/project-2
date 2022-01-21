@@ -1,27 +1,31 @@
 <%- include ('../partials/tempBar.ejs') %>
 
+<table class="striped">
+  <thead>
+    <tr>
+        <th>Keyboard Name</th>
+        <th>Size</th>
+        <th>PCB Type</th>
+        <th>Switch Type</th>
+        <th>Oil Type</th>
+        <th>Plate Material Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= keyboard.name %></td>
+      <td><%= keyboard.size %></td>
+      <td><%= keyboard.pcbType %></td>
+      <td><%= keyboard.switchType %></td>
+      <td><%= keyboard.oilType %></td>
+      <td><%= keyboard.plateMaterial %></td>
+    </tr>
+  </tbody>
+</table>
 
-<div class="row">
-  <div class="col s12 m6">
-    <div class="card">
-      <div class="card-image">
-        <span class="card-title"><%= keyboard.name %></span>
-      </div>
-      <div class="card-content">
-        <h2>Keyboard Details</h2>
-        <h4>Keyboard Build Name: <%= keyboard.name %></h4></div>
-        <div><h4>Size: <%= keyboard.size %> </h></div>
-        <div><h3>PCB Type: <%= keyboard.pcbType %> </h3></div>
-        <div><h3>Switch Type: <%= keyboard.switchType %> </h3></div>
-        <div><h3>Oil Type: <%= keyboard.oilType %></div>
-        <div><h3>Plate Material Type: <%= keyboard.plateMaterial %></div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
-<h3>Edit: <%= keyboard.name %></h3>
+<h4>Edit: <%= keyboard.name %></h4>
 <form action="/keyboards/<%= keyboard._id %>?_method=PUT" method="POST">
   <label>Name:</label>
   <input type="text" name="name" value="<%= keyboard.name %>" />
@@ -60,11 +64,12 @@
     <option value="Aluminum">Aluminum</option>
     <option value="Pom">Pom</option>
   </select>
+  <a class="waves-effect waves-light btn">
   <input type="submit" value="Update" method="POST"
-  action="/keyboards/<%= keyboard._id %>/notes">
+  action="/keyboards/<%= keyboard._id %>/notes"></a>
 </form>
 
-<h2>Additional Keyboard Build Notes</h2>
+<h4>Additional Keyboard Build Notes</h4>
 <% if (keyboard.notes.length) { %>
   <table>
     <thead>
@@ -80,7 +85,8 @@
         <td><%= n.createdAt.toLocaleDateString() %></td>
         <td><%= n.content %></td>
         <td><form action='/notes/<%= n._id %>?_method=DELETE' method="POST">
-          <input type="submit" value="Delete" />
+          <a class="waves-effect waves-light btn">
+          <input type="submit" value="Delete" /></a>
         </form></td>
       </tr>
       <% }); %>
@@ -89,9 +95,9 @@
   <% } else { %>
   <h5>No Additional Build Notes Recorded</h5>
   <% } %>
-  
   <form id="add-review-form" method="POST"
   action="/keyboards/<%= keyboard._id %>/notes">
   <textarea name="content"></textarea>
-  <input type="submit" value="New Note"></form>
+  <a class="waves-effect waves-light btn">
+  <input type="submit" value="New Note"></form></a>
   </body>

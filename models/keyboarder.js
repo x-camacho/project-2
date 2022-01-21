@@ -5,6 +5,9 @@ const keyboarderSchema = new mongoose.Schema({
   email: String,
   avatarURL: String,
   googleId: String,
+  keyboard: {
+    
+  }
 }, {
   timestamps: true
 });

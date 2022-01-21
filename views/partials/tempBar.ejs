@@ -16,11 +16,15 @@
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, options);
   });</script>
+  <script> document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.collapsible');
+      var instances = M.Collapsible.init(elems, options);
+    });</script>
 </head>
 <body>
   <div class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper green">
+      <div class="nav-wrapper blue-grey">
         <a href="" class="brand-logo left">Welcome to Keyboardy!</a>
         <ul class="right">
             <!-- Place Nav UI Here -->

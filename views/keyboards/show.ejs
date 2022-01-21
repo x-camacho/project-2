@@ -1,28 +1,37 @@
 <%- include ('../partials/tempBar.ejs') %>
 
+<table class="striped">
+  <thead>
+    <tr>
+        <th>Keyboard Name</th>
+        <th>Size</th>
+        <th>PCB Type</th>
+        <th>Switch Type</th>
+        <th>Oil Type</th>
+        <th>Plate Material Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= keyboard.name %></td>
+      <td><%= keyboard.size %></td>
+      <td><%= keyboard.pcbType %></td>
+      <td><%= keyboard.switchType %></td>
+      <td><%= keyboard.oilType %></td>
+      <td><%= keyboard.plateMaterial %></td>
+    </tr>
+  </tbody>
+</table>
 
-<section id="show-page">
-  <div><h2>Keyboard Details</h2></div>
-  <div class="list-title">
-  <h2>Keyboard Build Name: <%= keyboard.name %></h2></div>
-  <div><h3>Size:</h3></div>
-  <div><%= keyboard.size %></div>
-  <div><h3>PCB Type:</h3></div>
-  <div><%= keyboard.pcbType %></div>
-  <div><h3>Switch Type:</h3></div>
-  <div><%= keyboard.switchType %></div>
-  <div><h3>Oil Type:</h3></div>
-  <div><%= keyboard.oilType %></div>
-  <div><h3>Plate Material Type:</h3></div>
-  <div><%= keyboard.plateMaterial %></div>
-</section>
-<h3>Edit: <%= keyboard.name %></h3>
+
+
+<h4>Edit: <%= keyboard.name %></h4>
 <form action="/keyboards/<%= keyboard._id %>?_method=PUT" method="POST">
   <label>Name:</label>
   <input type="text" name="name" value="<%= keyboard.name %>" />
   <label>Keyboard Size:</label>
-  <select class="browser-default">
-    <option><%= keyboard.size %></option>
+  <select class="browser-default" name="size">
+    <option disabled selected><%= keyboard.size %></option>
     <option value="60%">60%</option>
     <option value="65%">65%</option>
     <option value="75%">75%</option>
@@ -30,36 +39,37 @@
     <option value="Full">Full</option>
   </select>
   <label>PCB Type:</label>
-  <select class="browser-default">
-    <option><%= keyboard.pcbType %></option>
+  <select class="browser-default" name="pcbType">
+    <option disabled selected><%= keyboard.pcbType %></option>
     <option value="Hot Swap">Hot Swap</option>
     <option value="Solderable">Solderable</option>
   </select>
   <label>Switch Type:</label>
-  <select class="browser-default">
-    <option><%= keyboard.switchType %></option>
+  <select class="browser-default" name="switchType">
+    <option disabled selected><%= keyboard.switchType %></option>
     <option value="Clicky">Clicky</option>
     <option value="Tactile">Tactile</option>
     <option value="Linear">Linear</option>
   </select>
   <label>Oil Type:</label>
-  <select class="browser-default">
-    <option><%= keyboard.oilType %></option>
+  <select class="browser-default" name="oilType">
+    <option disabled selected><%= keyboard.oilType %></option>
     <option value="Krytox 205g0">Krytox 205g0</option>
     <option value="Krytox 105g0">Krytox 105g0</option>
   </select>
   <label>Plate Material:</label>
-  <select class="browser-default">
-    <option><%= keyboard.plateMaterial %></option>
+  <select class="browser-default" name="plateMaterial">
+    <option disabled selected><%= keyboard.plateMaterial %></option>
     <option value="Brass">Brass</option>
     <option value="Aluminum">Aluminum</option>
     <option value="Pom">Pom</option>
   </select>
+  <a class="waves-effect waves-light btn blue-grey lighten-3">
   <input type="submit" value="Update" method="POST"
-  action="/keyboards/<%= keyboard._id %>/notes">
+  action="/keyboards/<%= keyboard._id %>/notes"></a>
 </form>
 
-<h2>Additional Keyboard Build Notes</h2>
+<h4>Additional Keyboard Build Notes</h4>
 <% if (keyboard.notes.length) { %>
   <table>
     <thead>
@@ -75,7 +85,8 @@
         <td><%= n.createdAt.toLocaleDateString() %></td>
         <td><%= n.content %></td>
         <td><form action='/notes/<%= n._id %>?_method=DELETE' method="POST">
-          <input type="submit" value="Delete" />
+          <a class="waves-effect waves-light btn blue-grey lighten-3">
+          <input type="submit" value="Delete" /></a>
         </form></td>
       </tr>
       <% }); %>
@@ -84,9 +95,9 @@
   <% } else { %>
   <h5>No Additional Build Notes Recorded</h5>
   <% } %>
-  
   <form id="add-review-form" method="POST"
   action="/keyboards/<%= keyboard._id %>/notes">
   <textarea name="content"></textarea>
-  <input type="submit" value="New Note"></form>
+  <a class="waves-effect waves-light btn blue-grey lighten-3" >
+  <input type="submit" value="New Note"></form></a>
   </body>

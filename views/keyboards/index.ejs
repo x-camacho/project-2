@@ -12,11 +12,11 @@
                   <p></p>
               </div>
               <div class="card-action">
-                <a href='/keyboards/<%= k._id %>'>Details</a>
-                <div>
-                <form action='/keyboards/<%= k._id %>?_method=DELETE' method="POST"><input type="submit" value="Delete" /></form>
-                </div>
-                </div>
+                <a class="waves-effect waves-light btn" href='/keyboards/<%= k._id %>'>Details</a>
+                <a class="waves-effect waves-light btn">
+                <form action='/keyboards/<%= k._id %>?_method=DELETE' method="POST">
+                  <input type="submit" value="Delete" /></form></a>
+              </div>
               </div>
             </div>
           </div>

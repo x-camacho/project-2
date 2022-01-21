@@ -1,72 +1,54 @@
 # project-2
 Mech Keyboard Builder
+In this section of the repo we go over the thought process and story creation of our fun keyboard web application. 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link type="text/css" rel='stylesheet' href='../css/style.css' />
-</head>
-<body>
-<!-- Partials nav bar css -->
-<style>
-  /* Partials nav bar */
-#nav-items {
-  list-style: none;
-  padding: 10;
-  overflow: hidden;
-  position: relative;
-  background-color: #59821e;
-}
+## Concept: 
 
-.nav-lists {
-  float: left;
-  margin: 10px;
-  padding: 10px;
-  font-size: 25px;
-}
+## Brainstorm
+In this sec
 
-.nav-lists, .nav-links {
-  display: block;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-}
-.nav-lists .nav-links:hover {
-  background-color: #b4be60;
-}
-</style>
-<div>
-    <nav>
-        <ul id="nav-items">
-            <li class="nav-lists"><a class="nav-links" href="/keyboards">Keyboard List</a></li>
-            <li class="nav-lists"><a class="nav-links" href="/keyboards/new">Build</a></li>
-        </ul>
-    </nav>
-</div>
-  <main>
+<img src= "public/images/wireframe1.png" width= "300" height= "300">
+
+<img src= "public/images/wireframe2.png" width= "300" height= "300">
 
 
-<!DOCTYPE html>
-<html>
+## Wireframes:
 
-<head>
-  <title>Keyboardy!</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
-  <!-- Materialize Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Materialize CSS Framework -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="/css/style.css" />
-  <!-- JavaScript for Materialize -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <!-- <script> $(document).ready(function(){$('select').formSelect();});</script> -->
-  <script> document.addEventListener('DOMContentLoaded', function() {
-    let elems = document.querySelectorAll('select');
-    let instances = M.FormSelect.init(elems, options);
-  });</script>
-</head>
+
+
+## User Story
+User Stories
+As a user I should be able to name my custom keyboard build.
+As a user I should be able to create a mechanical keyboard from several drop menus.
+As a user I want to be able to select a specific size of a keyboard:
+60%
+65%
+75%
+Ten Key Less
+Full Ten Key
+As a user I want to choose the type of plate:
+Plate 
+Brass
+Aluminum
+Pom
+As a user I want to pick a style of switch:
+Linear
+Tactile
+Clicky
+As a user I should be able to select a stabilizer kit:
+Standard Stabilizer Kit
+As a user I should be able to select a lubricant type:
+Switch Oil A 
+Switch Oil B
+As a user I should be able to see a visual representation of each item that I select.
+As a user I should be able to save my customized keyboard.
+As a user I should be able to edit or delete my keyboard. 
+As a user I should be able to create a new keyboard and save it to the page. 
+
+## ERD (Entity Relationship Diagram)     
+
+
+## Technologies 
+
+## future additions

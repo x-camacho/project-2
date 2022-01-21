@@ -1,13 +1,15 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const keyboarderSchema = new mongoose.Schema({
   name: String,
   email: String,
   avatarURL: String,
   googleId: String,
-  keyboard: {
-    
-  }
+  keyboards: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Keyboard",
+  }]
 }, {
   timestamps: true
 });

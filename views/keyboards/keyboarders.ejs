@@ -12,10 +12,11 @@
                   <p>
                     <div><strong>Email:</strong> <%= k.email %></div>
                     <div><strong>Member Since:</strong> <%= k.createdAt %></div>
+                    <div><strong>Member Since:</strong> <%= k.keyboards %></div>
                   </p>
               </div>
               <div class="card-action">
-                <a class="waves-effect waves-light btn black-text blue-grey lighten-3" href='/keyboards/<%= k.email %>'>Details</a>
+                <a class="wbtn disabled black-text" href='/keyboards/<%= k.email %>'>Details</a>
               </div>
               </div>
             </div>

@@ -1,29 +1,46 @@
 <%- include ('../partials/navBar.ejs') %>
 
-<div class="list-containers">
-  <div class="list-container-child">
-  <h3> Build List:</h3>
+<div class= "testy">
+  <div>
+    <div class="list-container-child">
+      <h3> Build List:</h3>
       <% keyboards.forEach( k => { %>
-        <div class="row">
+        <div class="row card-panel hoverable">
           <div class="col s12 m6">
-            <div class="card dark blue-grey lighten-1">
+            <div class="card deep-purple lighten-3">
               <div class="card-content black-text">
                 <span class="card-title"><%= k.name %></span>
-                  <p>
-              
-                  </p>
+                <p>
+                  
+                </p>
               </div>
               <div class="card-action">
                 <a class="waves-effect waves-light btn black-text blue-grey lighten-3" href='/keyboards/<%= k._id %>'>Details</a>
                 <a class="waves-effect waves-light btn blue-grey lighten-3">
               </div>
-              </div>
             </div>
           </div>
-        </div>
           <% }); %>
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+
+<div class="line"></div>
+  <div class="tutorial">
+    <h1>Keyboard Tutorial</h1>
+    <h4>Welcome enthusiasts!</h4>
+    <div class="row">
+
+      <div class="col s12">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/zzfJ_KSuhpQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p>Here's an example of a premium typing experience from one of the leading
+      keyboard content creators.
+      </p>
+      </div>
+      
+      <div class="col s6"> </div>
+      <div class="col s6"> </div>
+
+    </div>
+
   </div>
 </div>
-  

@@ -13,7 +13,7 @@ const keyboardSchema = new Schema({
         required: true
     },
     createdBy: [{
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.Object,
         ref: "Keyboarder",
     }],
     size: String,

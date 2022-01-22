@@ -26,16 +26,32 @@ This image shows the the first stages and different components of the read me pa
 <img src= "public/images/wireframe1.png" width= "500" height= "500">
 
 We see here the other components we needed to build a keyboard
-<img src= "public/images/wireframe2.png" width= "300" height= "300">
+<img src= "public/images/wireframe2.png" width= "500" height= "500">
 
 This brain storm was later created into a build page for the website.
 
 ## Wireframes:
+Landing Page
+<img src= "public/images/frame1.png" width= "500" height= "500">
+
+Oauth/User Verification Page
+<img src= "public/images/frame2.png" width= "500" height= "500">
+
+Build List Example
+<img src= "public/images/frame3.png" width= "500" height= "500">
+
+Blog or Tutorial Page
+<img src= "public/images/frame4.png" width= "500" height= "500">
+
+Create Keyboard Page
+<img src= "public/images/frame5.png" width= "500" height= "500">
+
+Get to Know Developers Page
+<img src= "public/images/frame6.png" width= "500" height= "500">
 
 
 
-## User Story
-
+## User Story:
 As a user I should be able to name my custom keyboard build.
 As a user I should be able to create a mechanical keyboard from several drop menus.
 
@@ -70,7 +86,8 @@ As a user I should be able to edit or delete my keyboard.
 As a user I should be able to create a new keyboard and save it to the page. 
 
 ## User Flow Chart
-
+<img src= "public/images/frame6.png" width= "500" height= "500">
+public/images/erd.png
 ## ERD (Entity Relationship Diagram)     
 
 

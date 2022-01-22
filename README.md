@@ -14,12 +14,21 @@ aspects of the keyboard they would need to be aware of. Simply put, the web appl
 learn how to create a new keyboard and to save and update existing keyboards that they have created.
 
 ## Brainstorm
-Together, we came up with this idea after hearing the sheer acoustics of a premium keyboard. 
+The initial idea of this brainstorm came out from a conversation among devs. The most difficult part of a creative assignment is being creative. 
+When we were thinking about what kind of app we wanted to create we decidied to make something related to the things we think are fun. Eventually,
+we came around to discussing keyboards. How keyboards can come in various forms and sounds. Creating the most pleasing experience for people
+who have to be on their keyboards all day. Then we thought of creating a landing page for people who seek the same amazing experience you can create.
+Together, we came up with this idea for a landing site with after hearing the sheer acoustics of a premium keyboard. 
 
-<img src= "public/images/wireframe1.png" width= "300" height= "300">
+Down below are some pictures of the brainstorming process.
 
+This image shows the the first stages and different components of the read me page we needed to create. 
+<img src= "public/images/wireframe1.png" width= "500" height= "500">
+
+We see here the other components we needed to build a keyboard
 <img src= "public/images/wireframe2.png" width= "300" height= "300">
 
+This brain storm was later created into a build page for the website.
 
 ## Wireframes:
 

@@ -14,10 +14,10 @@ const Keyboarder = require('../models/keyboarder');
 
 //Index2
   const index2 = (req, res) => {
-    Keyboard.find({}, function (err, allKeyboards) {
+    Keyboard.find({}, function (err, keyboards) {
         if (err) return res.send(err);
         const context = {
-			keyboards: allKeyboards,
+			keyboards,
 			user: req.user,
 		};
         return res.render("keyboards/index", context);

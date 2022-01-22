@@ -6,10 +6,10 @@ const keyboarderSchema = new mongoose.Schema({
   email: String,
   avatarURL: String,
   googleId: String,
-  keyboards: [{
+  keyboards: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Keyboard",
-  }]
+  },
 }, {
   timestamps: true
 });

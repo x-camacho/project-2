@@ -16,7 +16,6 @@ async function index(req, res) {
             keyboarder,
             user: req.user,
         })
-        console.log(keyboarder[0])
     } catch (err) {
         console.log(err)
     }

@@ -1,5 +1,5 @@
 const Keyboard = require('../models/keyboard');
-const Keyboards = require('../models/keyboard');
+const keyboard = require('../models/keyboard');
 const Keyboarder = require('../models/keyboarder');
 
 ////Index
@@ -37,13 +37,29 @@ function newKeyboards(req, res) {
   }
 
 // Create
-function create(req, res) {
-    const keyboard = new Keyboard(req.body);
-    keyboard.save(function(err) {
-      if (err) return res.redirect('/keyboards/new');
-      res.redirect('/keyboards');
-    });
-  }
+// function create(req, res) {
+//     const keyboard = new Keyboard(req.body);
+//     keyboard.save(function(err) {
+//       if (err) return res.redirect('/keyboards/new');
+//       res.redirect('/keyboards');
+//     });
+//   }
+
+const create = (req,res) => {
+    Keyboard.create(req.body, (err, createdKeyboard) => {
+        if(err) return res.send(err);
+        Keyboarder.findOne(createdKeyboard.keyboarder)
+            .exec(function(err, foundKeyboarder){
+                if(err) return res.send(err);
+                console.log(foundKeyboarder, "found Keyboarder")
+                // updating the author articles array
+                createdKeyboard.createdBy.push(foundKeyboarder) //adds the article ot the array
+                createdKeyboard.save(); //saves the relationship to the database and commits it to the meory 
+                res.redirect("/keyboards");
+            })
+    })
+}
+
 
 // Edit
 const edit = (req, res) => {

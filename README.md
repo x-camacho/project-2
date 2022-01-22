@@ -86,9 +86,13 @@ As a user I should be able to edit or delete my keyboard.
 As a user I should be able to create a new keyboard and save it to the page. 
 
 ## User Flow Chart
-<img src= "public/images/frame6.png" width= "500" height= "500">
-public/images/erd.png
+
+<img src= "public/images/userflow.png" width= "500" height= "500">
+
 ## ERD (Entity Relationship Diagram)     
+
+Relationships Between Data (one to many)
+<img src= "public/images/erd.png" width= "500" height= "500">
 
 
 ## Technologies 

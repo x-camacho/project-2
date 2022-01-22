@@ -1,0 +1,24 @@
+/* .testy {
+    display: flex;
+}
+*/
+.testy1 {
+    float: right;
+} 
+/* shadow hovers for buttons */
+.hover:hover {
+    box-shadow: 10px 10px 5px grey;
+}
+
+/* build page */
+.tutorial {
+    text-align: center;
+}
+
+.line {
+    border: 1px dashed #000;
+    width: 90%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}

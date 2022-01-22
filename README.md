@@ -4,6 +4,8 @@ In this section of the repo we go over the thought process and story creation of
 Inspired as a simple conversation of hobbies sparked an idea to help new hobbyists. 
 With this application we have created a simple tutorial website for those wishing for more click in their clack.
 
+Link to the app: https://keyboardy.herokuapp.com/
+
 ## Concept: 
 Similar to a fancy pen used to write. The new digital age requires us to constantly smash on our keyboards for what seems like hours.
 So if we have to use a keyboard for so long everyday why don't we try to get the best feel and experience we want?

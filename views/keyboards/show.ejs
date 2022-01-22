@@ -1,5 +1,6 @@
 <%- include ('../partials/tempBar.ejs') %>
 
+<div class="container bob">
 <table class="striped">
   <thead>
     <tr>
@@ -30,7 +31,7 @@
   <label>Name:</label>
   <input type="text" name="name" value="<%= keyboard.name %>" />
   <label>Keyboard Size:</label>
-  <select class="browser-default" name="size">
+  <select class="browser-default hover waves-effect waves-light" name="size">
     <option disabled selected><%= keyboard.size %></option>
     <option value="60%">60%</option>
     <option value="65%">65%</option>
@@ -39,32 +40,32 @@
     <option value="Full">Full</option>
   </select>
   <label>PCB Type:</label>
-  <select class="browser-default" name="pcbType">
+  <select class="browser-default hover waves-effect waves-light"  name="pcbType">
     <option disabled selected><%= keyboard.pcbType %></option>
     <option value="Hot Swap">Hot Swap</option>
     <option value="Solderable">Solderable</option>
   </select>
   <label>Switch Type:</label>
-  <select class="browser-default" name="switchType">
+  <select class="browser-default hover waves-effect waves-light" name="switchType">
     <option disabled selected><%= keyboard.switchType %></option>
     <option value="Clicky">Clicky</option>
     <option value="Tactile">Tactile</option>
     <option value="Linear">Linear</option>
   </select>
   <label>Oil Type:</label>
-  <select class="browser-default" name="oilType">
+  <select class="browser-default hover waves-effect waves-light" name="oilType">
     <option disabled selected><%= keyboard.oilType %></option>
     <option value="Krytox 205g0">Krytox 205g0</option>
     <option value="Krytox 105g0">Krytox 105g0</option>
   </select>
   <label>Plate Material:</label>
-  <select class="browser-default" name="plateMaterial">
+  <select class="browser-default hover waves-effect waves-light" name="plateMaterial">
     <option disabled selected><%= keyboard.plateMaterial %></option>
     <option value="Brass">Brass</option>
     <option value="Aluminum">Aluminum</option>
     <option value="Pom">Pom</option>
   </select>
-  <a class="waves-effect waves-light btn blue-grey lighten-3">
+  <a class=" hover waves-effect waves-light btn blue-grey lighten-3">
   <input type="submit" value="Update" method="POST"
   action="/keyboards/<%= keyboard._id %>/notes"></a>
 </form>
@@ -98,6 +99,7 @@
   <form id="add-review-form" method="POST"
   action="/keyboards/<%= keyboard._id %>/notes">
   <textarea name="content"></textarea>
-  <a class="waves-effect waves-light btn blue-grey lighten-3" >
+  <a class="hover waves-effect waves-light btn blue-grey lighten-3" >
   <input type="submit" value="New Note"></form></a>
+</div>
   </body>

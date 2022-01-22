@@ -96,5 +96,7 @@ Relationships Between Data (one to many)
 
 
 ## Technologies 
+Mongoose, Morgan, Oauth, Ejs, CSS, JS, HTML, MongoDB, CRUD
 
 ## future additions
+Some future alterations to the project might be to create a community forum.
